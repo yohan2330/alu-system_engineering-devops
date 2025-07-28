@@ -1,5 +1,5 @@
-#!/bin/bash
-# Install nginx web server and configure it to serve a page with "Holberton School"
+#!/usr/bin/env bash
+# Installs and configures Nginx on Ubuntu to serve a page with "Holberton School" at root
 
 # Update package lists
 apt-get update -y
@@ -8,10 +8,9 @@ apt-get update -y
 apt-get install nginx -y
 
 # Create a simple HTML page with required text
-echo "Holberton School for the win!" > /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.html
 
-# Ensure nginx is listening on port 80 (default configuration is fine)
-# Create a basic nginx configuration
+# Ensure nginx is listening on port 80 with a basic configuration
 cat > /etc/nginx/sites-available/default << EOF
 server {
     listen 80 default_server;
