@@ -7,10 +7,10 @@ apt-get update -y
 # Install nginx
 apt-get install nginx -y
 
-# Create a simple HTML page with required text
+# Create HTML page with required text
 echo "Holberton School" > /var/www/html/index.html
 
-# Ensure nginx is listening on port 80 with a basic configuration
+# Configure nginx to listen on port 80
 cat > /etc/nginx/sites-available/default << EOF
 server {
     listen 80 default_server;
@@ -30,5 +30,5 @@ EOF
 # Test nginx configuration
 nginx -t
 
-# Reload nginx without using systemctl
+# Reload nginx without systemctl
 service nginx reload
